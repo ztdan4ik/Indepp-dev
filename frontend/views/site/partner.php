@@ -6,7 +6,7 @@ use yii\captcha\Captcha;
 use yii\widgets\Pjax;
 use common\widgets\Alert;
 
-$this->title = 'Формец для партнеров1';
+$this->title = 'Формец для партнеров';
 
 $typeItems = array(
     'Интернет-магазин' => 'Интернет-магазин',
