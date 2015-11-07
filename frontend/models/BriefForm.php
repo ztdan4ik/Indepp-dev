@@ -65,7 +65,7 @@ class BriefForm extends Model
     public function sendEmail($email)
     {
         $this->files = UploadedFile::getInstances($this, 'files');
-        $message = Yii::$app->mail->compose('brief')->setTo(Yii::$app->params['adminEmail'])
+        $message = Yii::$app->mail->compose('brief')->setTo($email)
             ->setFrom([$email => $this->email.' - '.$this->company_name])
             ->setSubject($this->your_name.' Brief!!!');
         foreach ($this->files as $file) {
