@@ -66,7 +66,7 @@ class PartnerForm extends Model
     public function sendEmail($email)
     {
         $this->files = UploadedFile::getInstances($this, 'files');
-        $message = Yii::$app->mail->compose('partner')->setTo(Yii::$app->params['sendToEmail'])
+        $message = Yii::$app->mail->compose('partner')->setTo(Yii::$app->params['adminEmail'])
             ->setFrom([$email => $this->email.' - '.$this->your_name])
             ->setSubject($this->your_name.' Partners!!!');
         foreach ($this->files as $file) {
