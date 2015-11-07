@@ -70,7 +70,7 @@ class PartnerForm extends Model
             ->setFrom([$email => $this->email.' - '.$this->your_name])
             ->setSubject($this->your_name.' Partners!!!');
         foreach ($this->files as $file) {
-            $filename = 'uploads/briefs/'.$file->baseName.' - '.Yii::$app->formatter->asDate('now', 'yyyy-MM-dd').'.'.$file->extension;
+            $filename = 'uploads/forms/'.$file->baseName.' - '.Yii::$app->formatter->asDate('now', 'yyyy-MM-dd').'.'.$file->extension;
             $file->saveAs($filename);
             $message->attach($filename);
         }

@@ -31,3 +31,4 @@ phpunit.phar
 
 /index.php
 /index-test.php
+/uploads
