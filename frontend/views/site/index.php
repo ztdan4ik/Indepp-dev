@@ -15,6 +15,10 @@ $this->title = 'Indepp Team';
         <li><a href="<?=Url::toRoute('/site/about');?>">О нас</a></li>
         <li><a href="<?=Url::toRoute('/site/brief');?>">Заполнить Бриф</a></li>
         <?php /* <li><a href="<?=Url::toRoute('/site/partner');?>">Партнерка</a></li> */ ?>
+<<<<<<< HEAD
         <li><a href="<?=Url::toRoute('/site/test');?>">Тест</a></li>
+=======
+        <li><a href="<?=Url::toRoute('/site/contacts');?>">Контакты</a></li>
+>>>>>>> origin/master
     </ul>
 </div>
