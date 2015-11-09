@@ -30,7 +30,7 @@ class BriefForm extends Model
         return [
             [['your_name', 'email'], 'required'],
             ['email', 'email'],
-            [['files'], 'file', 'skipOnEmpty' => true, 'extensions' => 'doc, docx, txt, pdf, psd', 'maxFiles' => 5],
+            [['files'], 'file', 'skipOnEmpty' => true, 'extensions' => 'doc, docx, txt, pdf, psd, zip, rar, odt', 'maxFiles' => 5, 'maxSize' => '25 * 1024 * 1024'],
             ['verifyCode', 'captcha'],
         ];
     }

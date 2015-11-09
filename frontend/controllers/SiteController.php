@@ -54,6 +54,16 @@ class SiteController extends Controller
     }
 
     /**
+     * Displays contacts page.
+     *
+     * @return mixed
+     */
+    public function actionContacts()
+    {
+        return $this->render('contacts');
+    }
+
+    /**
      * Field Brief.
      *
      * @return mixed

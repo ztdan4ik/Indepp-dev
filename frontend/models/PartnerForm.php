@@ -32,7 +32,7 @@ class PartnerForm extends Model
             [['price','time'], 'integer'],
             ['email', 'email'],
             ['website', 'url'],
-            [['files'], 'file', 'skipOnEmpty' => true, 'extensions' => 'doc, docx, txt, pdf, psd', 'maxFiles' => 5],
+            [['files'], 'file', 'skipOnEmpty' => true, 'extensions' => 'doc, docx, txt, pdf, psd, zip, rar, odt', 'maxFiles' => 5, 'maxSize' => '25 * 1024 * 1024'],
             ['verifyCode', 'captcha'],
         ];
     }

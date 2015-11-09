@@ -41,7 +41,7 @@ $whattodoItems = array(
         <?= $form->field($model, 'short_desc')->textarea(['rows'=>'5']) ?>
         <?= $form->field($model, 'price')->hint('Если Вам не был озвучен тариф - уточняйте') ?>
         <?= $form->field($model, 'time')?>
-        <?= $form->field($model, 'files[]')->fileInput(['multiple' => true]) ?>
+        <?= $form->field($model, 'files[]')->fileInput(['multiple' => true])->hint('doc, docx, txt, pdf, psd, zip, rar, odt - до 25 Мб') ?>
         <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
             'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
         ]) ?>

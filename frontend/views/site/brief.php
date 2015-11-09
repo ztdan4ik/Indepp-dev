@@ -50,7 +50,7 @@ $goalItems = array(
         <?= $form->field($model, 'goal')->dropDownList($goalItems, ['prompt'=>'Выберите цель']); ?>
         <?= $form->field($model, 'example')->textarea()->hint('Через запятую') ?>
         <?= $form->field($model, 'languages')->radioList($lgItems) ?>
-        <?= $form->field($model, 'files[]')->fileInput(['multiple' => true])->hint('Техническое задание, макеты') ?>
+        <?= $form->field($model, 'files[]')->fileInput(['multiple' => true])->hint('Техническое задание, макеты (doc, docx, txt, pdf, psd, zip, rar, odt - до 25 Мб)') ?>
         <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
             'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
         ]) ?>
