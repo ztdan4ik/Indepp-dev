@@ -4,7 +4,6 @@ namespace backend\controllers;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
-use common\models\RegForm;
 use common\models\LoginForm;
 use common\models\User;
 use yii\filters\VerbFilter;
@@ -24,12 +23,16 @@ class SiteController extends Controller
                 'class' => AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['login', 'error'],
+                        'actions' => ['error'],
+                        'allow' => true,
+                    ],
+                    [
+                        'actions' => ['login'],
                         'allow' => true,
                         'roles' => ['?'],
                     ],
                     [
-                        'actions' => ['logout', 'reg', 'index'],
+                        'actions' => ['logout', 'index'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -75,31 +78,6 @@ class SiteController extends Controller
                 'model' => $model,
             ]);
         }
-    }
-
-    public function actionReg(){
-        $model = new RegForm();
-
-        if ($model->load(Yii::$app->request->post()) && $model->validate()):
-            if ($user = $model->reg()):
-                if ($user->status === User::STATUS_ACTIVE):
-                    if (Yii::$app->getUser()->login($user)):
-                        return $this->goHome();
-                    endif;
-                endif;
-            else:
-                Yii::$app->session->setFlash('error', 'Возникла ошибка при регистрации.');
-                Yii::error('Ошибка при регистрации');
-                return $this->refresh();
-            endif;
-        endif;
-
-        return $this->render(
-            'reg',
-            [
-                'model' => $model
-            ]
-        );
     }
 
     public function actionLogout()
