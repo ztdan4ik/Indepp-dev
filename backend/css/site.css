@@ -2,6 +2,8 @@ html,
 body {
     height: 100%;
 }
+body, h1, h2, h3, p {font-family: 'Ubuntu';}
+h1, h2 {font-weight: bold;}
 
 .wrap {
     min-height: 100%;
@@ -88,4 +90,21 @@ a.desc:after {
     border-left: 3px solid #eed3d7;
     padding: 10px 20px;
     margin: 0 0 15px 0;
+}
+
+.topside {
+    padding-bottom: 10px;
+}
+
+#headTitle {
+    display: block;
+    font-size:24px;
+    font-weight: bold;
+    padding:5px 0;
+}
+
+.wrap {padding:10px;}
+
+.admin-container {
+    padding-right:10px;
 }

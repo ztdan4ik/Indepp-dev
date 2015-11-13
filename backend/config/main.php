@@ -11,12 +11,7 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
-    'modules' => [
-        'gii' => [
-            'class' => 'yii\gii\Module',
-            'allowedIPs' => ['*'] // adjust this to your needs
-        ],
-    ],
+    'modules' => [],
     'components' => [
         'user' => [
             'identityClass' => 'common\models\User',
